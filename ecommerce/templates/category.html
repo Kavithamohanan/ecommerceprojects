@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!--    <img src="{% static 'images/banner.png' %}" height="500px" width="100%" >-->
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="container-fluid">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/img_1.png' %}" height="500px" width="100%" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 class="banner_title">Shop Smart, Eat Fresh</h1>
+        <p>Experience the ease of grocery shopping from home.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+     <img src="{% static 'images/img_4.jpg' %}" height="500px" width="100%" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1  class="banner_title">Fresh finds to your door.</h1>
+        <p>Quality ingredients, sourced fresh and delivered to your door.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+     <img src="{% static 'images/img_2.png' %}" height="500px" width="100%" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1  class="banner_title">One Click, Fresh Picks </h1>
+        <p>Fast, reliable delivery of your favorite fresh groceries.</p>
+      </div>
+    </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+    </div>
+
+
+
+<section class="about_area_4 pt-80 pb-130">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-6">
+                    <div class="about_image_5 mt-50">
+                        <img class="image" src="{% static 'images/about.png' %}" alt="about">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about_content_5 text-center mt-45">
+                        <div class="section_title">
+                            <h2 class="title">WELCOME</h2>
+                            <p class="details">Welcome to our online grocery shop, where quality meets convenience! We are dedicated to bringing you the freshest produce, premium meats, and wholesome pantry staples, all sourced with care and delivered right to your door. Our passion for quality and nutrition drives us to offer a diverse selection, ensuring every meal is delicious and nourishing. Join us on this journey to elevate your culinary experience with the finest ingredients!.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Featurs Section Start -->
+
+<section class="our-webcoderskull padding-lg">
+  <div class="container">
+    <div class="row heading heading-icon">
+        <h2>Our Special Features</h2>
+    </div>
+    <ul class="row">
+      <li class="col-12 col-md-12 col-lg-4">
+          <div class="cnt-block equal-hight" style="height: 300px;">
+            <figure><img src="{% static 'images/pack.png' %}" class="img-responsive" alt=""></figure>
+            <h3>Hygienically Packed</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do dunt ut labore.</p>
+
+          </div>
+      </li>
+      <li class="col-12 col-md-12 col-lg-4">
+          <div class="cnt-block equal-hight" style="height: 300px;">
+            <figure><img src="{% static 'images/delivery.png' %}" class="img-responsive" alt=""></figure>
+            <h3>Fast & Easy Grocery Delivery </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do dunt ut labore.</p>
+          </div>
+      </li>
+      <li class="col-12 col-md-12 col-lg-4">
+          <div class="cnt-block equal-hight" style="height: 300px;">
+            <figure><img src="{% static 'images/veg.png' %}" class="img-responsive" alt=""></figure>
+            <h3>Fresh Organic Vegetable</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do dunt ut labore.</p>
+          </div>
+       </li>
+    </ul>
+  </div>
+</section>
+
+
+
+<!--categories area-->
+
+       <div class="container" >
+           <div class="row">
+                <h2 class="title">OUR PRODUCTS</h2>
+               {% for i in c%}
+               <div class="col-12 col-md-6 col-lg-3">
+                   <div class="card">
+                      <img src="{{i.image.url}}" class="card-img-top" alt="..." height="200px;"  >
+                      <div class="card-body">
+                        <h5 class="card-title">{{i.name}}</h5>
+                        <a href="{% url 'shop:allproducts' i.name %}" class="btn btn-primary">Shop Now</a>
+                      </div>
+                   </div>
+               </div>
+               {% endfor %}
+           </div>
+       </div>
+
+<section >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="slider_content_3 text-center">
+                        <h2 class="main_title">Top Sellers</h2>
+
+                        <div class="slider_box_wrapper d-flex flex-wrap justify-content-between">
+                            <div class="single_column" style="background-color: #f3e6e6; border-radius: 20px;">
+                                <div class="single_box">
+                                    <img src="{% static 'images/orange.png' %}">
+                                    <h5>Orange</h5>
+                                </div>
+                            </div>
+                            <div class="single_column" style="background-color: #f3e6e6;border-radius: 20px;">
+                                <div class="single_box">
+                                    <img src="{% static 'images/walnut.png' %}" >
+                                    <h5>Walnut</h5>
+                                </div>
+                            </div>
+                            <div class="single_column" style="background-color: #f3e6e6;border-radius: 20px;">
+                                <div class="single_box">
+                                    <img src="{% static 'images/icecream.png' %}" >
+                                    <h5>Icecream</h5>
+
+                                </div>
+                            </div>
+                            <div class="single_column" style="background-color: #f3e6e6;border-radius: 20px;">
+                                <div class="single_box">
+                                    <img src="{% static 'images/blueberry.png' %}" >
+                                    <h6>Blueberry</h6>
+
+                                </div>
+                            </div>
+                            <div class="single_column" style="background-color: #f3e6e6;border-radius: 20px;">
+                                <div class="single_box">
+                                    <img src="{% static 'images/caps.png' %}" >
+                                    <h5>Capsicum</h5>
+                                </div>
+                            </div>
+                            <div class="single_column" style="background-color: #f3e6e6;border-radius: 20px;">
+                                <div class="single_box">
+                                    <img src="{% static 'images/strawberry.png' %}" >
+                                    <h5>Strawberry</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+{% endblock %}
